@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { Component, Input, input } from '@angular/core';
 
 @Component({
   selector: 'app-task',
@@ -8,5 +8,9 @@ import { Component, input } from '@angular/core';
   styleUrl: './task.component.css'
 })
 export class TaskComponent {
-  id = input.required<string>()
+  /* 
+  Angular 17 version 
+  id = input.required<string>() 
+  */
+  @Input() id!: string;
 }
