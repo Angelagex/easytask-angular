@@ -9,5 +9,8 @@ import { Component, computed, input, Input, output, Output } from '@angular/core
 export class UserComponent {
   avatar = input.required<string>()
   name = input.required<string>()
+  id = input.required<string>()
+  select = output<string>()
   getAvatar = computed(() => 'assets/users/' + this.avatar())
+  onSelectUser() { this.select.emit(this.id()) }
 }
