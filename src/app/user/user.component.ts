@@ -1,4 +1,5 @@
 import { Component, computed, EventEmitter, input, Input, output, Output } from '@angular/core';
+import { IUser } from '../../constants';
 
 @Component({
   selector: 'app-user',
@@ -20,14 +21,12 @@ export class UserComponent {
   */
 
   // Angular 16- version
-  @Input() avatar!: string;
-  @Input() name!: string;
-  @Input() id!: string;
+  @Input() user?: IUser;
   @Output() select = new EventEmitter<string>()
 
   get getAvatar() {
-    return 'assets/users/' + this.avatar;
+    return 'assets/users/' + this.user?.avatar;
   }
 
-  onSelectUser() { this.select.emit(this.id) }
+  onSelectUser() { this.select.emit(this.user?.id) }
 }

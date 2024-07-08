@@ -1,4 +1,5 @@
 import { Component, Input, input } from '@angular/core';
+import { IUser } from '../../constants';
 
 @Component({
   selector: 'app-task',
@@ -12,5 +13,5 @@ export class TaskComponent {
   Angular 17 version 
   id = input.required<string>() 
   */
-  @Input() id!: string;
+  @Input() user?: IUser;
 }
